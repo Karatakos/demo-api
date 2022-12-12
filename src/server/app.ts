@@ -3,10 +3,10 @@ import { fib } from "../lib/fib";
 import express, { Express, Request, Response } from 'express';
 
 const app: Express = express();
-const port = 80;
+const port = 3000;
 
 app.get('/status', (req: Request, res: Response) => {
-    res.status(200).send('OK');
+    res.status(200).send('OK!');
 });
 
 app.get('/fib/:sequence', (req: Request, res: Response) => {
