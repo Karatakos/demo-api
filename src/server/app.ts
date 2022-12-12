@@ -6,7 +6,7 @@ const app: Express = express();
 const port = 3000;
 
 app.get('/status', (req: Request, res: Response) => {
-    res.status(200).send('OK!');
+    res.status(200).send('Healthy');
 });
 
 app.get('/fib/:sequence', (req: Request, res: Response) => {
