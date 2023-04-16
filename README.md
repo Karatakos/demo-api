@@ -1,4 +1,4 @@
-# Woven Demo App (API)
+# Demo App (API)
 
 ## Building & Testing
 
@@ -22,7 +22,7 @@ For a first release, after `ResourcesStack` is created (creates ECR repo), an im
 Log in to AWS to get a token for ECR access replacing account and region accordingly
 
 ``` 
-aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 869229378759.dkr.ecr.ap-northeast-1.amazonaws.com
+aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin <account>.dkr.ecr.ap-northeast-1.amazonaws.com
 ```
 
 Stack `ResourcesStack` (see CDK repo) has been deployed
@@ -30,13 +30,13 @@ Stack `ResourcesStack` (see CDK repo) has been deployed
 ### Step 2. Build & Verify Image
 
 ```
-docker build -t 869229378759.dkr.ecr.ap-northeast-1.amazonaws.com/woven-demo-app:latest -f Dockerfile .
+docker build -t <account>.dkr.ecr.ap-northeast-1.amazonaws.com/demo-app:latest -f Dockerfile .
 
-docker run -d -p 80:3000 869229378759.dkr.ecr.ap-northeast-1.amazonaws.com/woven-demo-app:latest
+docker run -d -p 80:3000 <account>.dkr.ecr.ap-northeast-1.amazonaws.com/demo-app:latest
 ```
 
 ### Step 3. Push the container to ECR 
 
 ```
-docker push 869229378759.dkr.ecr.ap-northeast-1.amazonaws.com/woven-demo-app:latest
+docker push <account>.dkr.ecr.ap-northeast-1.amazonaws.com/demo-app:latest
 ```
